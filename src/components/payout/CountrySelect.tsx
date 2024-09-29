@@ -298,8 +298,9 @@ const CountrySelect: React.FC = () => {
               isOptionSelected ? "text-black dark:text-white" : ""
             }`}
           >
-            {countries.map((country) => (
+            {countries.map((country, index) => (
               <option
+                key={index}
                 value={country.name}
                 className="text-body dark:text-bodydark"
               >
