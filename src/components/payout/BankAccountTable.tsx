@@ -14,8 +14,11 @@ const BankAccountTable = ({
         <table className="w-full table-auto">
           <thead>
             <tr className="bg-gray-2 text-left dark:bg-meta-4">
-              {fieldNames.map((fieldName) => (
-                <th className="px-4 py-4 font-medium text-black dark:text-white">
+              {fieldNames.map((fieldName, index) => (
+                <th
+                  className="px-4 py-4 font-medium text-black dark:text-white"
+                  key={index}
+                >
                   {fieldName}
                 </th>
               ))}
