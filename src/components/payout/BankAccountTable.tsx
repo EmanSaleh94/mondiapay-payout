@@ -1,5 +1,6 @@
-import { Package } from "@/types/package";
+// "use client";
 import { BankAccountTableData } from "@/types/BankAccountTableData";
+import Modal from "@/components/payout/Modal";
 
 const BankAccountTable = ({
   fieldNames,
@@ -10,6 +11,9 @@ const BankAccountTable = ({
 }) => {
   return (
     <div className=" m-5 rounded border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
+      <div className="mb-3 flex flex-col">
+        <Modal />
+      </div>
       <div className="max-w-full overflow-x-auto">
         <table className="w-full table-auto">
           <thead>
@@ -53,7 +57,10 @@ const BankAccountTable = ({
                   </p>
                 </td>
                 <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                  <button className="btn btn-primary">Accent</button>
+                  <button className="btn btn-primary w-17">Edit</button>
+                  <button className="btn btn-error ms-3 w-17 text-white">
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
