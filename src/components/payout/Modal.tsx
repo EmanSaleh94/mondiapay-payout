@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountrySelect from "@/components/payout/CountrySelect";
 
-const Modal = () => {
+interface Props {
+  modalState: boolean;
+}
+
+const Modal = ({ modalState }: Props) => {
+  useEffect(() => {
+    console.log("In Model Stats", modalState);
+    document.getElementById("my_modal_6").checked = modalState;
+  }, [modalState]);
   return (
     <>
       {/* The button to open modal */}
@@ -14,27 +22,27 @@ const Modal = () => {
 
       {/* Put this part before </body> tag */}
       <input type="checkbox" id="my_modal_6" className="modal-toggle" />
-      <div className="modal " role="dialog">
-        <div className="modal-box ms-50 max-w-3xl ">
-          <h3 className="text-lg font-bold">Add Bank Account</h3>
+      <div className="modal" role="dialog" id="MyModal">
+        <div className="modal-box ms-50 max-w-3xl  text-bodydark2 dark:border-strokedark dark:bg-boxdark">
+          <h3 className="text-lg font-bold ">Add Bank Account</h3>
 
-          <div className=" m-auto  mt-3 p-3">
+          <div className=" m-auto  mt-3 p-3 ">
             <p>Bank Account Details</p>
             <div className=" mt-3 flex justify-between">
               <p>Default</p>
               <input
                 type="checkbox"
-                className="toggle toggle-error "
+                className="toggle toggle-error  "
                 defaultChecked
               />
             </div>
 
-            <div className="mt-3 flex justify-between ">
-              <p>Account Name</p>
+            <div className="mt-3 flex justify-between  ">
+              <p className="text-bodydark2 dark:bg-boxdark ">Account Name</p>
               <input
                 type="text"
                 placeholder="Account Name..."
-                className="input input-sm input-bordered w-70 max-w-xs"
+                className="input input-sm input-bordered w-70 max-w-xs  text-bodydark2 dark:border-strokedark  dark:bg-form-input"
               />
             </div>
 
@@ -43,7 +51,7 @@ const Modal = () => {
               <input
                 type="text"
                 placeholder="IBAN..."
-                className="input input-sm input-bordered w-70 max-w-xs"
+                className="input input-sm input-bordered w-70 max-w-xs text-bodydark2 dark:border-strokedark dark:bg-form-input"
               />
             </div>
             <div className="mt-3 flex justify-between ">
@@ -51,7 +59,7 @@ const Modal = () => {
               <input
                 type="text"
                 placeholder="Swift code..."
-                className="input input-sm input-bordered w-70 max-w-xs"
+                className="input input-sm input-bordered w-70 max-w-xs text-bodydark2 dark:border-strokedark dark:bg-form-input"
               />
             </div>
             <div className=" mt-3 flex justify-between ">
@@ -63,12 +71,16 @@ const Modal = () => {
             <div className=" mt-3 flex  justify-between ">
               <p>Currency</p>
               <div className="dropdown dropdown-hover">
-                <div tabIndex={0} role="button" className="btn  w-70">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn  w-70 text-bodydark2 dark:border-strokedark dark:bg-form-input"
+                >
                   Currency
                 </div>
                 <ul
                   tabIndex={0}
-                  className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
+                  className="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 text-bodydark2 shadow dark:border-strokedark dark:bg-boxdark"
                 >
                   <li>
                     <a>Item 1</a>
@@ -79,10 +91,17 @@ const Modal = () => {
                 </ul>
               </div>
             </div>
+
+            <div className="mt-3 flex justify-between ">
+              <button className="btn btn-primary ms-auto w-70"> Edit</button>
+            </div>
           </div>
 
           <div className="modal-action">
-            <label htmlFor="my_modal_6" className="btn">
+            <label
+              htmlFor="my_modal_6"
+              className="btn text-bodydark2 dark:border-strokedark dark:bg-form-input"
+            >
               Close!
             </label>
           </div>

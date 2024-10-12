@@ -4,6 +4,7 @@ import SelectGroupTwo from "@/components/SelectGroup/SelectGroupTwo";
 import CountrySelect from "@/components/payout/CountrySelect";
 import MerchantTable from "@/components/payout/MerchantTable";
 import { Package } from "@/types/package";
+import Card from "@/components/payout/Card";
 
 const packageData: Package[] = [
   {
@@ -72,11 +73,19 @@ const Page = () => {
               <input
                 type="text"
                 placeholder="Merchant"
-                className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent bg-white px-5 py-3 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:bg-form-input dark:text-white dark:focus:border-primary"
+                className="mb-3 w-full rounded-lg border-[1.5px] border-stroke bg-transparent bg-white px-5 py-3 outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:bg-form-input dark:text-white dark:focus:border-primary"
               />
             </div>
             <div>
               <CountrySelect />
+            </div>
+            <label className="  mb-3 mt-3 block border-t-2  pt-2 text-sm font-medium dark:text-white">
+              Select Merchant
+            </label>
+            <div className="">
+              <Card />
+              <Card />
+              <Card />
             </div>
           </div>
         </div>

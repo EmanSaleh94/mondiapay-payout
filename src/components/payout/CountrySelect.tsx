@@ -255,7 +255,7 @@ const CountrySelect: React.FC = () => {
   ];
   return (
     <>
-      <div className="z-3 relative   rounded-lg  border-[1.5px] border-stroke bg-white dark:bg-form-input">
+      <div className="z-3 relative rounded-lg  bg-white dark:bg-form-input">
         <span className="absolute left-4 top-1/2 z-30 -translate-y-1/2">
           <svg
             width="20"

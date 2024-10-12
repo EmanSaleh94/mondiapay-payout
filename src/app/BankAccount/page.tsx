@@ -33,7 +33,7 @@ const Page = () => {
           />
         </div>
         <div className="drawer-side">
-          <div className="menu min-h-full w-60 bg-black p-4 ">
+          <div className="menu min-h-full w-60 bg-black p-4">
             <div>
               <label className="= mb-3 block text-sm font-medium dark:text-white">
                 Find Merchant
@@ -51,6 +51,15 @@ const Page = () => {
               Select Merchant
             </label>
             <div className="">
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
               <Card />
               <Card />
               <Card />

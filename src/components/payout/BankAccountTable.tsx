@@ -1,4 +1,5 @@
-// "use client";
+"use client";
+import { useState } from "react";
 import { BankAccountTableData } from "@/types/BankAccountTableData";
 import Modal from "@/components/payout/Modal";
 
@@ -9,10 +10,11 @@ const BankAccountTable = ({
   fieldNames: string[];
   tableValues: BankAccountTableData[];
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div className=" m-5 rounded border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
       <div className="mb-3 flex flex-col">
-        <Modal />
+        <Modal modalState={openModal} />
       </div>
       <div className="max-w-full overflow-x-auto">
         <table className="w-full table-auto">
@@ -56,9 +58,16 @@ const BankAccountTable = ({
                     {packageItem.lastUpdated}
                   </p>
                 </td>
-                <td className="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                  <button className="btn btn-primary w-17">Edit</button>
-                  <button className="btn btn-error ms-3 w-17 text-white">
+                <td className="flex justify-around border-b border-[#eee] px-4 py-5 dark:border-strokedark sm:flex-col xl:flex-row">
+                  <button
+                    className="btn btn-primary w-17"
+                    onClick={() => {
+                      setOpenModal(!openModal);
+                    }}
+                  >
+                    Edit
+                  </button>
+                  <button className="btn btn-error w-17 text-white  ">
                     Delete
                   </button>
                 </td>
